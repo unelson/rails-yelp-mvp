@@ -1,0 +1,16 @@
+<h1>Restaurants</h1>
+<%# <p>Find me in app/views/restaurants/show.html.erb</p> %>
+<h1><%= @restaurant.name %></h1>
+<ul>
+  <li><%= @restaurant.address %></li>
+  <li><%= @restaurant.phone_number %></li>
+  <li><%= @restaurant.category %></li>
+</ul>
+
+<% @restaurant.reviews.each do |review|  %>
+  <%= review.rating %>
+  <%= review.content %>
+<% end %>
+
+
+<%= link_to 'leave a review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary'%>
